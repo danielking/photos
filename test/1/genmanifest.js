@@ -34,9 +34,9 @@ glob('*.jpg', {}, function(error, files) {
 			async.eachSeries(photos, function(photo, cb) {
 				var w, h;
 				if(photo.size.width > photo.size.height) {
-					h = 240;
+					h = 160;
 				} else {
-					w = 240;
+					w = 160;
 				}
 				photo.gm.resize(w, h, '>').write('thumbnails/' + photo.filename, function(error) {
 					cb(null);
